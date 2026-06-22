@@ -1,0 +1,185 @@
+:root {
+  color-scheme: dark;
+  --bg: #1b1117;
+  --panel: rgba(25, 17, 23, 0.86);
+  --panel-border: rgba(255, 255, 255, 0.18);
+  --text: #fff7fb;
+  --muted: rgba(255, 247, 251, 0.66);
+  --accent: #f26d9d;
+  --shadow: 0 12px 36px rgba(0, 0, 0, 0.38);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family:
+    "Microsoft YaHei",
+    "PingFang SC",
+    system-ui,
+    sans-serif;
+  background:
+    linear-gradient(rgba(12, 7, 11, 0.12), rgba(12, 7, 11, 0.12)),
+    url("./assets/images/background.png") center top / cover fixed no-repeat;
+  padding-bottom: calc(96px + env(safe-area-inset-bottom));
+}
+
+.gallery {
+  position: relative;
+  width: min(100%, 1150px);
+  margin: 0 auto;
+  box-shadow: 0 0 44px rgba(0, 0, 0, 0.32);
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1150 / 740;
+  background: #160f14;
+}
+
+.player-shell {
+  position: fixed;
+  z-index: 10;
+  left: max(12px, env(safe-area-inset-left));
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(160px, 1fr) auto auto auto auto minmax(120px, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  width: min(1040px, calc(100vw - 24px));
+  margin: 0 auto;
+  padding: 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.track-info {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.track-title,
+.track-artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.track-artist,
+.time {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.track-select {
+  min-width: 0;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0 10px;
+}
+
+.track-select:focus-visible,
+.play-button:focus-visible,
+.nav-button:focus-visible,
+.progress:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.play-button,
+.nav-button {
+  height: 42px;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.play-button {
+  min-width: 72px;
+  color: #220b16;
+  background: var(--accent);
+}
+
+.nav-button {
+  min-width: 62px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.play-button:active,
+.nav-button:active {
+  transform: translateY(1px);
+}
+
+.progress {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.autoplay-notice {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding-bottom: calc(208px + env(safe-area-inset-bottom));
+  }
+
+  .player-shell {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .track-info,
+  .track-select,
+  .progress {
+    grid-column: 1 / -1;
+  }
+
+  .track-select {
+    width: 100%;
+  }
+
+  .nav-button,
+  .play-button {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .time-current {
+    grid-column: 1 / 2;
+    justify-self: start;
+  }
+
+  .time-duration {
+    grid-column: 3 / 4;
+    justify-self: end;
+  }
+}

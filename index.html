@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1b1117" />
+    <title>ラヴィアンローズ</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="gallery" id="gallery" aria-label="图片展示"></main>
+
+    <footer class="player-shell" aria-label="音乐播放器">
+      <div class="track-info">
+        <span class="track-title" id="trackTitle">ラヴィアンローズ</span>
+        <span class="track-artist" id="trackArtist">照井春佳</span>
+      </div>
+      <select class="track-select" id="trackSelect" aria-label="选择歌曲"></select>
+      <button class="nav-button" id="prevButton" type="button" aria-label="上一首">上一首</button>
+      <button class="play-button" id="playButton" type="button" aria-label="播放">播放</button>
+      <button class="nav-button" id="nextButton" type="button" aria-label="下一首">下一首</button>
+      <div class="time time-current">0:00</div>
+      <input class="progress" id="progress" type="range" min="0" max="1000" value="0" aria-label="播放进度" />
+      <div class="time time-duration" id="duration">0:00</div>
+      <div class="autoplay-notice" id="autoplayNotice" hidden>如果没有自动播放，点一下页面开始音乐</div>
+      <audio id="audio" preload="auto" autoplay src="./assets/audio/ravian-rose.mp3"></audio>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
