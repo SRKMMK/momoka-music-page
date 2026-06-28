@@ -43,6 +43,31 @@ const tracks = [
     artist: "照井春佳",
     src: "./assets/audio/track-06-kira-mankai-smile.mp3",
   },
+  {
+    title: "お願い！シンデレラ 櫻井桃華ソロ・リミックス",
+    artist: "櫻井桃華",
+    src: "./assets/audio/track-07-onegai-cinderella.mp3",
+  },
+  {
+    title: "きゅん・きゅん・まっくす",
+    artist: "櫻井桃華",
+    src: "./assets/audio/track-08-kyun-kyun-max.mp3",
+  },
+  {
+    title: "ハイファイ☆デイズ 櫻井桃華ソロ・リミックス",
+    artist: "櫻井桃華",
+    src: "./assets/audio/track-09-hi-fi-days.mp3",
+  },
+  {
+    title: "THE VILLAIN'S NIGHT 櫻井桃華ソロ・リミックス",
+    artist: "櫻井桃華",
+    src: "./assets/audio/track-10-villains-night.mp3",
+  },
+  {
+    title: "White again 櫻井桃華ソロ・リミックス",
+    artist: "櫻井桃華",
+    src: "./assets/audio/track-11-white-again.mp3",
+  },
 ];
 
 let currentTrackIndex = 0;
