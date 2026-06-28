@@ -76,7 +76,7 @@ let autoplayBlocked = false;
 for (let index = 1; index <= imageCount; index += 1) {
   const number = String(index).padStart(3, "0");
   const image = document.createElement("img");
-  image.src = `./assets/images/${number}.png`;
+  image.src = `./assets/images/${number}.webp`;
   image.alt = `图片 ${index}`;
   image.width = 1150;
   image.height = 740;
